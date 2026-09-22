@@ -11,82 +11,138 @@
 
 <body>
 
-<div class="stars"></div>
-
 <header class="topbar">
-
     <div class="brand">
         <div class="brand-icon">🌌</div>
 
         <div>
             <h1>Cosmos Explorer</h1>
-            <p>Explore the Solar System</p>
+            <p>Explore the Universe</p>
         </div>
     </div>
 
-    <div class="top-stats">
-        <div>
-            <strong>8</strong>
-            <span>Planets</span>
-        </div>
-
-        <div>
-            <strong>1</strong>
-            <span>Star</span>
-        </div>
-
-        <div>
-            <strong>∞</strong>
-            <span>Discoveries</span>
-        </div>
-    </div>
-
+    <nav>
+        <button class="nav-btn active" data-section="home">Home</button>
+        <button class="nav-btn" data-section="planets">🪐 Planets</button>
+        <button class="nav-btn" data-section="sun">☀️ Sun</button>
+        <button class="nav-btn" data-section="blackholes">🕳️ Black Holes</button>
+        <button class="nav-btn" data-section="stars">⭐ Stars</button>
+    </nav>
 </header>
 
 
 <main>
 
-    <section class="hero">
+    <!-- HOME -->
 
-        <div class="hero-content">
+    <section id="home" class="page-section active-section">
 
-            <span class="hero-tag">🚀 SOLAR SYSTEM EXPLORER</span>
+        <div class="hero">
 
-            <h2>Journey Through<br><span>Our Cosmic Neighborhood</span></h2>
+            <div class="hero-content">
 
-            <p>
-                Explore the planets, discover fascinating facts,
-                and learn how each world is different.
-            </p>
+                <span class="hero-label">🌌 COSMIC DATABASE</span>
 
-            <button id="exploreBtn" class="primary-btn">
-                🚀 Explore Planets
-            </button>
+                <h2>Journey Through<br>Our Cosmic Neighborhood</h2>
+
+                <p>
+                    Discover planets, stars, the Sun, black holes,
+                    and the incredible objects that make up our universe.
+                </p>
+
+                <button class="primary-btn" onclick="showSection('planets')">
+                    🚀 Start Exploring
+                </button>
+
+            </div>
+
+            <div class="solar-visual">
+
+                <div class="orbit orbit-1">
+                    <div class="orbit-planet mercury"></div>
+                </div>
+
+                <div class="orbit orbit-2">
+                    <div class="orbit-planet venus"></div>
+                </div>
+
+                <div class="orbit orbit-3">
+                    <div class="orbit-planet earth"></div>
+                </div>
+
+                <div class="orbit orbit-4">
+                    <div class="orbit-planet mars"></div>
+                </div>
+
+                <div class="sun-core">☀️</div>
+
+            </div>
 
         </div>
 
-        <div class="solar-orbit">
 
-            <div class="sun">☀️</div>
+        <div class="explorer-grid">
 
-            <div class="orbit orbit-1">
-                <div class="orbit-planet mercury"></div>
+            <div class="explorer-card" onclick="showSection('planets')">
+                <div class="explorer-icon">🪐</div>
+                <h3>Planet Explorer</h3>
+                <p>Explore all 8 planets and discover their properties, facts and statistics.</p>
+                <span>Explore →</span>
             </div>
 
-            <div class="orbit orbit-2">
-                <div class="orbit-planet venus"></div>
+
+            <div class="explorer-card sun-card" onclick="showSection('sun')">
+                <div class="explorer-icon">☀️</div>
+                <h3>Sun Explorer</h3>
+                <p>Discover the star at the center of our solar system.</p>
+                <span>Explore →</span>
             </div>
 
-            <div class="orbit orbit-3">
-                <div class="orbit-planet earth"></div>
+
+            <div class="explorer-card blackhole-card" onclick="showSection('blackholes')">
+                <div class="explorer-icon">🕳️</div>
+                <h3>Black Hole Explorer</h3>
+                <p>Learn about gravity, event horizons, accretion disks and mysterious cosmic objects.</p>
+                <span>Explore →</span>
             </div>
 
-            <div class="orbit orbit-4">
-                <div class="orbit-planet mars"></div>
+
+            <div class="explorer-card stars-card" onclick="showSection('stars')">
+                <div class="explorer-icon">⭐</div>
+                <h3>Stars Explorer</h3>
+                <p>Explore different kinds of stars and learn how stars are born and die.</p>
+                <span>Explore →</span>
             </div>
 
-            <div class="orbit orbit-5">
-                <div class="orbit-planet jupiter"></div>
+        </div>
+
+
+        <div class="quick-facts">
+
+            <h2>✨ Quick Cosmos Facts</h2>
+
+            <div class="facts-grid">
+
+                <div class="fact-box">
+                    <strong>🌌 Milky Way</strong>
+                    <p>Our galaxy contains billions of stars.</p>
+                </div>
+
+                <div class="fact-box">
+                    <strong>☀️ The Sun</strong>
+                    <p>The Sun contains almost all the mass of our solar system.</p>
+                </div>
+
+                <div class="fact-box">
+                    <strong>🌍 Earth</strong>
+                    <p>Earth is the only known world with life.</p>
+                </div>
+
+                <div class="fact-box">
+                    <strong>🕳️ Black Holes</strong>
+                    <p>Their gravity can become so strong that light cannot escape.</p>
+                </div>
+
             </div>
 
         </div>
@@ -94,78 +150,453 @@
     </section>
 
 
-    <section class="controls" id="planetsSection">
 
-        <div class="section-title">
+    <!-- PLANETS -->
+
+    <section id="planets" class="page-section">
+
+        <div class="section-heading">
+
             <div>
-                <span>OUR WORLDS</span>
-                <h2>Choose a Planet</h2>
+                <span class="section-label">🪐 SOLAR SYSTEM</span>
+                <h2>Planet Explorer</h2>
+                <p>Explore the eight planets of our solar system.</p>
             </div>
 
+            <button class="back-home" onclick="showSection('home')">
+                ← Home
+            </button>
+
+        </div>
+
+
+        <div class="search-box">
+            🔍
             <input
                 type="text"
-                id="searchInput"
-                placeholder="🔍 Search planets..."
+                id="planetSearch"
+                placeholder="Search planets..."
             >
         </div>
+
 
         <div id="planetGrid" class="planet-grid"></div>
 
     </section>
 
 
-    <section id="detailSection" class="detail-section hidden">
 
-        <button id="backBtn" class="back-btn">
-            ← Back to Planets
-        </button>
+    <!-- SUN -->
 
-        <div id="planetDetail"></div>
+    <section id="sun" class="page-section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">☀️ OUR STAR</span>
+                <h2>Sun Explorer</h2>
+                <p>Explore the star that powers our solar system.</p>
+            </div>
+
+            <button class="back-home" onclick="showSection('home')">
+                ← Home
+            </button>
+
+        </div>
+
+
+        <div class="cosmic-detail sun-detail">
+
+            <div class="detail-visual sun-big">
+                ☀️
+            </div>
+
+            <div class="detail-content">
+
+                <h2>The Sun</h2>
+
+                <p>
+                    The Sun is a huge star at the center of our solar system.
+                    It provides the light and heat that make life on Earth possible.
+                    The Sun is made mostly of hydrogen and helium and produces energy
+                    through nuclear fusion in its core.
+                </p>
+
+                <div class="stat-grid">
+
+                    <div class="stat">
+                        <span>Type</span>
+                        <strong>G-type Star</strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>Age</span>
+                        <strong>~4.6 Billion Years</strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>Diameter</span>
+                        <strong>~1.39 Million km</strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>Surface Temp.</span>
+                        <strong>~5,500°C</strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>Core Temp.</span>
+                        <strong>~15 Million°C</strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>Composition</span>
+                        <strong>Hydrogen + Helium</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-card">
+                <h3>🔥 Nuclear Fusion</h3>
+                <p>
+                    Deep inside the Sun, hydrogen nuclei combine to form helium.
+                    This process releases enormous amounts of energy.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>🌡️ Extremely Hot</h3>
+                <p>
+                    The visible surface of the Sun is thousands of degrees Celsius,
+                    while its core reaches millions of degrees.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>🌞 Solar Wind</h3>
+                <p>
+                    The Sun constantly releases charged particles into space.
+                    This stream is called the solar wind.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>🌍 Earth's Energy</h3>
+                <p>
+                    Nearly all of Earth's natural energy ultimately comes from
+                    the Sun.
+                </p>
+            </div>
+
+        </div>
 
     </section>
 
 
-    <section class="cosmos-facts">
 
-        <div class="section-title">
+    <!-- BLACK HOLES -->
+
+    <section id="blackholes" class="page-section">
+
+        <div class="section-heading">
+
             <div>
-                <span>QUICK DISCOVERY</span>
-                <h2>Cosmos Facts</h2>
+                <span class="section-label">🕳️ EXTREME COSMOS</span>
+                <h2>Black Hole Explorer</h2>
+                <p>Enter one of the universe's most mysterious environments.</p>
             </div>
+
+            <button class="back-home" onclick="showSection('home')">
+                ← Home
+            </button>
+
         </div>
 
-        <div class="fact-grid">
 
-            <div class="fact-card">
-                <div>🌌</div>
-                <h3>Milky Way</h3>
+        <div class="blackhole-hero">
+
+            <div class="blackhole-visual">
+
+                <div class="accretion-ring"></div>
+
+                <div class="blackhole-center"></div>
+
+            </div>
+
+            <div class="blackhole-description">
+
+                <h2>What Is a Black Hole?</h2>
+
                 <p>
-                    Our Solar System is located in the Milky Way galaxy.
+                    A black hole is a region of space where gravity is extremely
+                    strong. Once something passes beyond its event horizon,
+                    it cannot escape back out.
+                </p>
+
+                <p>
+                    Black holes can form when massive stars collapse at the end
+                    of their lives. Supermassive black holes can also exist at
+                    the centers of galaxies.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="blackhole-types">
+
+            <div class="info-card">
+                <span class="big-icon">⚫</span>
+                <h3>Stellar Black Holes</h3>
+                <p>
+                    These can form from the collapse of massive stars and are
+                    usually several times the mass of our Sun.
                 </p>
             </div>
 
-            <div class="fact-card">
-                <div>☀️</div>
-                <h3>The Sun</h3>
+            <div class="info-card">
+                <span class="big-icon">🌌</span>
+                <h3>Supermassive Black Holes</h3>
                 <p>
-                    The Sun contains more than 99% of the Solar System's mass.
+                    These enormous black holes can contain millions or billions
+                    of solar masses and are found at the centers of many galaxies.
                 </p>
             </div>
 
-            <div class="fact-card">
-                <div>🌍</div>
-                <h3>Our Home</h3>
+            <div class="info-card">
+                <span class="big-icon">🔄</span>
+                <h3>Accretion Disk</h3>
                 <p>
-                    Earth is currently the only world known to support life.
+                    Matter falling toward a black hole can form a rapidly rotating
+                    disk that becomes extremely hot and bright.
                 </p>
             </div>
 
-            <div class="fact-card">
-                <div>🚀</div>
-                <h3>Space Exploration</h3>
+            <div class="info-card">
+                <span class="big-icon">🚪</span>
+                <h3>Event Horizon</h3>
                 <p>
-                    Hundreds of robotic spacecraft have explored beyond Earth.
+                    The event horizon is the boundary around a black hole beyond
+                    which escape is impossible.
                 </p>
+            </div>
+
+        </div>
+
+
+        <div class="blackhole-facts">
+
+            <h2>🧠 Black Hole Facts</h2>
+
+            <div class="fact-list">
+
+                <div>01 — Black holes do not simply act like cosmic vacuum cleaners.</div>
+                <div>02 — Their gravity depends on their mass and distance.</div>
+                <div>03 — Light cannot escape from inside the event horizon.</div>
+                <div>04 — Black holes can merge with other black holes.</div>
+                <div>05 — Merging black holes can produce gravitational waves.</div>
+                <div>06 — Some black holes are surrounded by extremely hot matter.</div>
+                <div>07 — Supermassive black holes can sit at galaxy centers.</div>
+                <div>08 — Scientists can study black holes through their effects on nearby matter.</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- STARS -->
+
+    <section id="stars" class="page-section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">⭐ STELLAR DATABASE</span>
+                <h2>Stars Explorer</h2>
+                <p>Discover the incredible variety of stars in the universe.</p>
+            </div>
+
+            <button class="back-home" onclick="showSection('home')">
+                ← Home
+            </button>
+
+        </div>
+
+
+        <div class="star-showcase">
+
+            <div class="giant-star">
+                ⭐
+            </div>
+
+            <div>
+                <h2>Stars Are Cosmic Powerhouses</h2>
+
+                <p>
+                    Stars are enormous balls of extremely hot plasma held together
+                    by gravity. Most stars produce energy through nuclear fusion.
+                    They come in many different sizes, temperatures and colors.
+                </p>
+
+                <p>
+                    The Sun is one example of a star, but the universe contains
+                    stars that are much smaller, much larger, hotter and cooler.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="star-types">
+
+            <div class="star-card blue-star">
+
+                <div class="star-symbol">🔵</div>
+
+                <h3>Blue Stars</h3>
+
+                <p>
+                    Very hot and often massive stars. Their surfaces can reach
+                    tens of thousands of degrees.
+                </p>
+
+                <span>Very Hot</span>
+
+            </div>
+
+
+            <div class="star-card white-star">
+
+                <div class="star-symbol">⚪</div>
+
+                <h3>White Stars</h3>
+
+                <p>
+                    Hot stars that appear white or blue-white when viewed from
+                    Earth.
+                </p>
+
+                <span>Hot</span>
+
+            </div>
+
+
+            <div class="star-card yellow-star">
+
+                <div class="star-symbol">🟡</div>
+
+                <h3>Yellow Stars</h3>
+
+                <p>
+                    The Sun is a yellow-white star commonly classified as a
+                    G-type main-sequence star.
+                </p>
+
+                <span>Medium Hot</span>
+
+            </div>
+
+
+            <div class="star-card orange-star">
+
+                <div class="star-symbol">🟠</div>
+
+                <h3>Orange Stars</h3>
+
+                <p>
+                    Cooler than yellow stars and often classified as K-type
+                    stars.
+                </p>
+
+                <span>Cooler</span>
+
+            </div>
+
+
+            <div class="star-card red-star">
+
+                <div class="star-symbol">🔴</div>
+
+                <h3>Red Stars</h3>
+
+                <p>
+                    Red dwarf stars are relatively cool and are among the most
+                    common stars in our galaxy.
+                </p>
+
+                <span>Cool</span>
+
+            </div>
+
+
+            <div class="star-card giant-star-card">
+
+                <div class="star-symbol">🌟</div>
+
+                <h3>Giant Stars</h3>
+
+                <p>
+                    Giant and supergiant stars can become enormous compared
+                    with stars like our Sun.
+                </p>
+
+                <span>Huge</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="star-life">
+
+            <h2>⭐ Life Cycle of a Star</h2>
+
+            <div class="life-line">
+
+                <div>
+                    <strong>☁️</strong>
+                    <span>Nebula</span>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div>
+                    <strong>✨</strong>
+                    <span>Protostar</span>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div>
+                    <strong>⭐</strong>
+                    <span>Main Sequence</span>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div>
+                    <strong>🔴</strong>
+                    <span>Giant</span>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div>
+                    <strong>💥</strong>
+                    <span>Final Stage</span>
+                </div>
+
             </div>
 
         </div>
@@ -176,8 +607,15 @@
 
 
 <footer>
-    <p>🌌 Cosmos Explorer • Explore • Discover • Understand</p>
-    <p>Planetary information based on NASA data.</p>
+
+    <div>
+        🌌 <strong>Cosmos Explorer</strong>
+    </div>
+
+    <p>
+        Explore. Discover. Understand the Universe.
+    </p>
+
 </footer>
 
 
