@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cosmos Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-icon">🌌</div>
+
+        <div>
+            <h1>Cosmos Explorer</h1>
+            <p>Explore the Solar System</p>
+        </div>
+    </div>
+
+    <div class="top-stats">
+        <div>
+            <strong>8</strong>
+            <span>Planets</span>
+        </div>
+
+        <div>
+            <strong>1</strong>
+            <span>Star</span>
+        </div>
+
+        <div>
+            <strong>∞</strong>
+            <span>Discoveries</span>
+        </div>
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">🚀 SOLAR SYSTEM EXPLORER</span>
+
+            <h2>Journey Through<br><span>Our Cosmic Neighborhood</span></h2>
+
+            <p>
+                Explore the planets, discover fascinating facts,
+                and learn how each world is different.
+            </p>
+
+            <button id="exploreBtn" class="primary-btn">
+                🚀 Explore Planets
+            </button>
+
+        </div>
+
+        <div class="solar-orbit">
+
+            <div class="sun">☀️</div>
+
+            <div class="orbit orbit-1">
+                <div class="orbit-planet mercury"></div>
+            </div>
+
+            <div class="orbit orbit-2">
+                <div class="orbit-planet venus"></div>
+            </div>
+
+            <div class="orbit orbit-3">
+                <div class="orbit-planet earth"></div>
+            </div>
+
+            <div class="orbit orbit-4">
+                <div class="orbit-planet mars"></div>
+            </div>
+
+            <div class="orbit orbit-5">
+                <div class="orbit-planet jupiter"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="controls" id="planetsSection">
+
+        <div class="section-title">
+            <div>
+                <span>OUR WORLDS</span>
+                <h2>Choose a Planet</h2>
+            </div>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search planets..."
+            >
+        </div>
+
+        <div id="planetGrid" class="planet-grid"></div>
+
+    </section>
+
+
+    <section id="detailSection" class="detail-section hidden">
+
+        <button id="backBtn" class="back-btn">
+            ← Back to Planets
+        </button>
+
+        <div id="planetDetail"></div>
+
+    </section>
+
+
+    <section class="cosmos-facts">
+
+        <div class="section-title">
+            <div>
+                <span>QUICK DISCOVERY</span>
+                <h2>Cosmos Facts</h2>
+            </div>
+        </div>
+
+        <div class="fact-grid">
+
+            <div class="fact-card">
+                <div>🌌</div>
+                <h3>Milky Way</h3>
+                <p>
+                    Our Solar System is located in the Milky Way galaxy.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <div>☀️</div>
+                <h3>The Sun</h3>
+                <p>
+                    The Sun contains more than 99% of the Solar System's mass.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <div>🌍</div>
+                <h3>Our Home</h3>
+                <p>
+                    Earth is currently the only world known to support life.
+                </p>
+            </div>
+
+            <div class="fact-card">
+                <div>🚀</div>
+                <h3>Space Exploration</h3>
+                <p>
+                    Hundreds of robotic spacecraft have explored beyond Earth.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>🌌 Cosmos Explorer • Explore • Discover • Understand</p>
+    <p>Planetary information based on NASA data.</p>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
